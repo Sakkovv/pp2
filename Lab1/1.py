@@ -1,1 +1,0 @@
-print('cout<< 555s/nsafs')
