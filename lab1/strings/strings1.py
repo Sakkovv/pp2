@@ -1,0 +1,2 @@
+b = "Slovo"
+print(b)
