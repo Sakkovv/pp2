@@ -6,16 +6,20 @@ pygame.display.set_caption("Ball Game")
 loop = True
 
 #coordinates of the center
+#первоначальная координата мячв
 x = 300
 y = 300
 #borders
+#Границы поля
 up_limit = 25
 down_limit = 575
 left_limit = 25
 right_limit = 575
 
+#Создает объект Clock для управления FPS (кадры в секунду).
 clock = pygame.time.Clock()
 
+#Создает переменную loop, которая будет использоваться для основного игрового цикла.
 while loop:
     pressed = pygame.key.get_pressed()
 
@@ -40,5 +44,7 @@ while loop:
     screen.fill((255,255,255))
     pygame.draw.circle(screen, (255, 255, 50), (x,y), radius=25)
 
+    #Обновление текущего экрана
     pygame.display.flip()
+    #FPS до 60 кадров в секунду.
     clock.tick(60)

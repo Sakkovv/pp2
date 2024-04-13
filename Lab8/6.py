@@ -37,6 +37,8 @@ def main():
                     mode = 'red'
                 elif event.key == pygame.K_s:
                     mode = "black"
+                elif event.key == pygame.K_e:  # Добавляем обработку клавиши 'e' для активации ластика
+                    mode = "eraser"
             
             if event.type == pygame.MOUSEBUTTONDOWN:
                 if event.button == 1:
@@ -49,7 +51,7 @@ def main():
                 points = points + [position]
                 points = points[-256:]
                 
-        screen.fill((255, 255, 0))
+        screen.fill((255, 255, 255))
         i = 0
         while i < len(points) - 1:
             drawLineBetween(screen, i, points[i], points[i + 1], radius, mode)
@@ -71,6 +73,8 @@ def drawLineBetween(screen, index, start, end, width, color_mode):
         color = (c1, c2, c1)
     elif color_mode == "black":
         color = (c2, c2, c1)
+    elif color_mode == "eraser":  # Добавляем обработку ластика
+        color = (255, 255, 255)  # Белый цвет для ластика
     
     dx = start[0] - end[0]
     dy = start[1] - end[1]
