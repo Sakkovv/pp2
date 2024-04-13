@@ -16,7 +16,7 @@ class Food(GameObject):
         return result
 
     def generate_food_position(self):
-
-        x = random.randint(20, self.tile_width - 1)
-        y = random.randint(20, self.tile_width - 1)
+        # Генерируем случайные координаты для новой еды
+        x = random.randint(0, (self.tile_width - 1) // 20) * 20
+        y = random.randint(0, (self.tile_width - 1) // 20) * 20
         self.points = [Point(x, y)]

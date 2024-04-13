@@ -28,6 +28,7 @@ worm = Worm(20)
 food = Food(20)
 wall = Wall(20)
 
+
 while not done:
         # Event filtering
         filtered_events = []
@@ -39,7 +40,10 @@ while not done:
 
         worm.process_input(filtered_events)
         worm.move()
-
+        # Check for collisions
+        if worm.check_collision(screen.get_width(), screen.get_height()):
+                done = True
+                
         pos = food.can_eat(worm.points[0])
         if(pos != None):
             worm.increase(pos)
