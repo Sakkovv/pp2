@@ -45,7 +45,6 @@ try:
     # with connection.cursor() as cursor:
     #     cursor.execute(
     #         """INSERT INTO users (name, phone_number) VALUES
-    #         ('Zhumabek', '87072547241'),
     #         ('Zhumabeadasf', '8707254724444');"""
     #     )
     #     print(f"[INFO] Data was succesfully inserted")
@@ -61,26 +60,9 @@ try:
     #     )
     #     print(cursor.fetchone())
     #     cursor.execute(
-    #         """SELECT * FROM users WHERE phone_number = '8707254744424'"""
+    #         """SELECT * FROM users WHERE phone_number = '8707744424'"""
     #     )
     #     print(cursor.fetchone())
-
-
-
-    # РАБОТА С CSV-ФАЙЛОМ
-    # Открываем CSV-файл для чтения
-
-
-    # РАБОТА С CSV-ФАЙЛОМ
-    with open('name_number.csv', newline='') as csvfile:
-        reader = csv.reader(csvfile)
-        next(reader)  # Пропускаем заголовок
-        for row in reader:
-            cursor.execute(
-                "INSERT INTO users (name, phone_number) VALUES (%s, %s)",
-                (row[0], row[1])
-            )
-        print("[INFO] Data was successfully inserted")
 
 
 
